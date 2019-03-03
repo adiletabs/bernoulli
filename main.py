@@ -1,4 +1,4 @@
-TOKEN = '755388953:AAGfFvv8Wu994FKJXZepZKyidTJvgkPuPgE'
+TOKEN = ''
 
 from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 from telegram.ext import (Updater, CommandHandler, ConversationHandler, 
@@ -14,7 +14,7 @@ def start(bot, update):
 	bot.send_message(chat_id=update.message.chat_id, text='Привет! С этим ботом вы можете записать ваш отчет\nНажмите /new, чтобы записать новый отчет')
 
 def help(bot, update):
-	bot.send_message(chat_id=update.message.chat_id, text='/new - записать новый отчет\n')
+	bot.send_message(chat_id=update.message.chat_id, text='/help - помощь\n/new - начать новый отчет\n/time - текущее время\n/username - юзернейм пользователя\n/folder - создать папку\n/file - создать файл')
 
 def new(bot, update):
 	reply_keyboard = [['Республика Казахстан', 'г. Астана'], ['г. Алматы', 'Акмолинская область'], 
@@ -154,5 +154,4 @@ def main():
 
 
 if __name__ == '__main__':
-	print('Working...')
 	main()
